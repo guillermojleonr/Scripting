@@ -107,3 +107,25 @@ Public Function get_last_row_number(rng As Range) As Integer
     
 End Function
 
+
+Public Sub arregla_valores()
+
+'---------------------------------------------------------------------------------------
+' Purpose   : Transform column values.
+'----------------------------------------------------------------------------------------
+    Dim wb As Workbook
+    Dim ws As Worksheet
+    
+    Dim sample_range As Range
+    
+    Set wb = Application.Workbooks("finance_data.xlsm")
+    Set ws = wb.Sheets("sheet1")
+    
+    Set sample_range = Range("E2:E5000")
+    
+    For Each cell In sample_range
+        If cell.Value <> "" Then
+            cell.Value = cell.Value * 0.5 'Reduce the cell value by half
+        End If
+    Next
+End Sub
