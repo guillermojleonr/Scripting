@@ -1,0 +1,1 @@
+FOR /F %i IN (fichero.txt) Do mkdir %i

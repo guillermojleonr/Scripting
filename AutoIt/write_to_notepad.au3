@@ -1,0 +1,6 @@
+Run("notepad.exe")
+WinWaitActive("Sin título: Bloc de notas")
+Send("This is some text.")
+WinClose("Sin título: Bloc de notas")
+WinWaitActive("Bloc de notas")
+Send("!n")
