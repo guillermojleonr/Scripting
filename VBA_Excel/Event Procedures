@@ -1,0 +1,24 @@
+Private WithEvents App As Application 'Enables application events in this workbook
+
+Private Sub App_SheetSelectionChange(ByVal Sh As Object, ByVal Target As Range)
+  'Highlights the current selected row in any worbook sheet.
+
+    Dim Active_Row As Integer
+
+    Static xRow
+    
+    If xRow <> "" Then
+        With Rows(xRow).Interior
+            .ColorIndex = xlNone
+        End With
+    End If
+    
+    Active_Row = Selection.Row
+    xRow = Active_Row
+    
+    With Rows(Active_Row).Interior
+        .ColorIndex = 1
+        .Pattern = xlSolid
+        .TintAndShade = 0.8
+    End With
+End Sub
