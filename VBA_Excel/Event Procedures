@@ -2,6 +2,7 @@ Private WithEvents App As Application 'Enables application events in this workbo
 
 Private Sub App_SheetSelectionChange(ByVal Sh As Object, ByVal Target As Range)
   'Highlights the current selected row in any worbook sheet.
+  '***IMPORTANT*** Be carefull with this code because everytime an event is triggered and the code runs, you won't be able to Undo changes in your excel worksheet.
 
     Dim Active_Row As Integer
 
